@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project-1 Onclick </title>
+
+	<style>
+
+		.box{
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+			background-color: red;
+			float: left;
+			text-align: center;
+		}
+
+		.box{
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+			background-color: red;
+			float: left;
+			text-align: center;
+		}
+
+		.box{
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+			background-color: red;
+			float: left;
+			text-align: center;
+		}
+
+		.box{
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+			background-color: red;
+			float: left;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="box">Bule</div>
+<div class="box">Bule</div>
+<div class="box">Bule</div>
+<div class="box">Bule</div>
+
+<button type="button" 
+onclick="myFunction('green')">
+Click Me!</button>
+
+<button type="button" 
+onclick="myFunction('blue')">
+Click Me!</button>
+
+<button type="button" 
+onclick="myFunction('yellow')">
+Click Me!</button>
+
+
+<script>
+ 
+	function myFunction(color) {
+    var x = document.getElementsByClassName('box');
+    
+
+    
+    /*if (x.style.backgroundColor === 'red') {
+        x.style.backgroundColor = 'blue';
+    } else {
+        x.style.backgroundColor = 'red';
+    }*/
+
+    for(var i=0;i<x.length;i++){
+    	x[i].style.backgroundColor =color;
+
+    }
+
+}
+</script>
+
+</body>
+</html>
