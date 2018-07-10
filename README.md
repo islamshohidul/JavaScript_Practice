@@ -1,2 +1,2 @@
 # JavaScript_Practice
-Some core JavaScript code will be demonstrated through code.
+Some core JavaScript code Application will be demonstrated through code.
