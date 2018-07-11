@@ -7,13 +7,21 @@
 
 	<h2>Character count in textarea:</h2>
 
-	<textarea name="myfield" id="mycount" cols="50" rows="9" placeholder="Type your comment"   > </textarea>
+	<textarea name="myfield" id="mycount"  cols="50" rows="9" placeholder="Type your comment"   > </textarea>
+
 	<br>
+	
 	<span id='charactersRemaining'> </span>
+	
+	<textarea id="textIn"></textarea>
+	<br>  
+	StatusBar: <span id="statusbar"></span>  
+  
 
 	
 	<script> 
 	var el = document.getElementById("mycount").addEventListener('keyup',count,false);
+
 
 	function count(){
 
@@ -27,9 +35,48 @@
 		
 		document.getElementById('charactersRemaining').innerHTML= "Number of characters that all  have been typed:"+counter; 
 		//countRemaining.textContent = counter;  
-	}
-	
 
+		
+	}
+
+
+
+		var textArea = document.getElementById('textIn');
+		var statusBar = document.getElementById('statusbar');
+
+
+
+		//Add the listener through addEventListener
+		textArea.addEventListener("keyup", updateStatus, false);
+		textArea.addEventListener("click", updateStatus, false);
+
+		//Function declaration, will be hoisted for 'addEventListener'
+		//Most of the work is done to have this work for multiple text area's
+		function updateStatus(){
+		  //alert("textIn " + textArea.value)
+
+		  // replace all words with an x
+		  var text = textArea.value,
+		      xWords = text.replace(/\S+/g, "x"),
+		      //Replace those x's
+		      noWords = xWords.replace(/x/g, ""),
+		      //Get rid of newlines from just the spaces.
+		      noNewLines = noWords.replace(/\n/g, "");
+		  //You could consider a template function here..
+
+		  if(text.length>20){
+		  	document.getElementById("textIn").disabled = true;
+		  	alert("Exceed the word limit");
+
+		  }
+		    statusBar.textContent = "Length: " + text.length + " Words: " + (xWords.length - noWords.length) +
+		                        " Characters: " + (text.length - noWords.length) +
+		                        " / " + (noWords.length - noNewLines.length);  
+		}
+		//Update the status at the start, provide `textArea` as `this`
+		updateStatus.call( textArea );
+	
+	
 
 
 	</script>
