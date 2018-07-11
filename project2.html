@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h2>Character count in textarea:</h2>
+
+	<textarea name="myfield" id="mycount" cols="50" rows="9" placeholder="Type your comment"   > </textarea>
+	<br>
+	<span id='charactersRemaining'> </span>
+
+	
+	<script> 
+	var el = document.getElementById("mycount").addEventListener('keyup',count,false);
+
+	function count(){
+
+		var textEntered, countRemaining, counter;    
+
+		textEntered = document.getElementById('mycount').value; 
+		counter = (textEntered.length); 
+		
+		
+		//counter = (140 - (textEntered.length));
+		
+		document.getElementById('charactersRemaining').innerHTML= "Number of characters that all  have been typed:"+counter; 
+		//countRemaining.textContent = counter;  
+	}
+	
+
+
+
+	</script>
+
+
+</body>
+</html>
