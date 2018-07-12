@@ -1,0 +1,24 @@
+.container{
+	width: 1170px;
+
+
+}
+
+.upside{
+	background-color: #000000;
+	height: 67px;
+	width: 100%;
+	
+}
+.upside h1{ 
+	color: #ebebeb;
+
+}
+
+.far{
+	float: right;
+	z-index: 1;
+	width: 20px;
+	height: 20px;
+
+}
