@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital clock in javaScript</title>
+	<link rel="stylesheet" type="text/css" href="digital_clock.css">
+</head>
+<body>
+
+	<div id="clock" ></div>
+
+	<script type="text/javascript">
+
+	function showTime(){
+
+
+		var time = new Date();
+		var hr = time.getHours()
+		var min = time.getMinutes();
+		var sec = time.getSeconds();
+		var am_pm ="AM";
+
+		if(hr==0){
+			h=12;
+
+		}
+
+		if(hr>12){
+			hr=hr%12;
+			am_pm="PM";
+		}
+
+		hr = (hr<10) ? "0" + hr:hr;
+		min = (min<10) ? "0" + min:min;
+		sec = (sec<10) ? "0" + sec:sec;
+
+		var display = hr + ":" + min + ":" + sec + ":" + am_pm;
+
+		setTimeout(showTime, 1000);
+		document.getElementById("clock").innerHTML = display;
+
+	}
+
+	
+	showTime();
+
+
+	</script>
+
+</body>
+</html>
